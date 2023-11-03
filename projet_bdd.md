@@ -60,28 +60,28 @@ ORDER BY nb DESC
 LIMIT 1;
 ```
 ##### 9. Quel est le type d'exutoire le plus courant par famille de déchet ?
-Pour 'alimentation' : Conseil (Gaspillage alimentaire). //
-Pour la famille 'bijoux' : Conseil (Don / Entraide / Revente).
-Pour la famille 'bois' : Exutoire (dechetterie)
-Pour la famille 'Culture loisirs' : Conseil (Dématérualisation)
-Pour la famille 'Divers' : Exutoire (Poubelle noire)
-Pour la famille 'electrique et éléctronique' : exutoire (dechetterie) 
-Pour la famille 'emballage métal' : Exutoire (Poubelle verte / jaune)
-Pour la famille 'emballage plastique' : Exutoire (Poubelle verte / jaune)
-Pour la famille 'equipement de la maison' : Conseil (Don/Entraide/Revente)
-Pour la famille 'instrument de musique' : Conseil (Don / Entraide / Revente)
-Pour la famille 'médical' : Exutoire (Pharmacie)
-Pour la famille 'matériaux' : Exutoire (dechetterie)
-Pour la famille 'objet plastique' : exutoire (poubelle noire)
-Pour la famille 'outil manuel' : Conseil (don / entraide / revente)
-Pour la famille 'papier carton' : exutoire (poubelle verte/jaune )
-Pour la famille 'produit chimiques' : Exutoire (dechetterie)
-Pour la famille 'Sport' : Conseil (don / entraide / revente)
-Pour la famille 'textile' : exutoire (revnedeur ou installateur)
-Pour la famille 'végétaux' :  Exutoire (dechetterie)
-Pour la famille 'vaiselle' :  Exutoire (dechetterie)
-Pour la famille 'verre' : exutoire (borne à verre)
-Pour la famille 'vie domestique' : Exutoire (dechetterie) 
+Pour 'alimentation' : Conseil (Gaspillage alimentaire).  
+Pour la famille 'bijoux' : Conseil (Don / Entraide / Revente).  
+Pour la famille 'bois' : Exutoire (dechetterie)  
+Pour la famille 'Culture loisirs' : Conseil (Dématérualisation)  
+Pour la famille 'Divers' : Exutoire (Poubelle noire)  
+Pour la famille 'electrique et éléctronique' : exutoire (dechetterie)  
+Pour la famille 'emballage métal' : Exutoire (Poubelle verte / jaune)  
+Pour la famille 'emballage plastique' : Exutoire (Poubelle verte / jaune)  
+Pour la famille 'equipement de la maison' : Conseil (Don/Entraide/Revente)  
+Pour la famille 'instrument de musique' : Conseil (Don / Entraide / Revente)  
+Pour la famille 'médical' : Exutoire (Pharmacie)  
+Pour la famille 'matériaux' : Exutoire (dechetterie)  
+Pour la famille 'objet plastique' : exutoire (poubelle noire)  
+Pour la famille 'outil manuel' : Conseil (don / entraide / revente)  
+Pour la famille 'papier carton' : exutoire (poubelle verte/jaune )  
+Pour la famille 'produit chimiques' : Exutoire (dechetterie)  
+Pour la famille 'Sport' : Conseil (don / entraide / revente)  
+Pour la famille 'textile' : exutoire (revnedeur ou installateur)  
+Pour la famille 'végétaux' :  Exutoire (dechetterie)  
+Pour la famille 'vaiselle' :  Exutoire (dechetterie)  
+Pour la famille 'verre' : exutoire (borne à verre)  
+Pour la famille 'vie domestique' : Exutoire (dechetterie)  
 
 ``` sql
 SELECT famille_dechet, type, label COUNT(*) AS nb_occurrences
