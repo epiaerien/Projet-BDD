@@ -60,7 +60,7 @@ ORDER BY nb DESC
 LIMIT 1;
 ```
 ##### 9. Quel est le type d'exutoire le plus courant par famille de déchet ?
-Pour 'alimentation' : Conseil (Gaspillage alimentaire).
+Pour 'alimentation' : Conseil (Gaspillage alimentaire). //
 Pour la famille 'bijoux' : Conseil (Don / Entraide / Revente).
 Pour la famille 'bois' : Exutoire (dechetterie)
 Pour la famille 'Culture loisirs' : Conseil (Dématérualisation)
