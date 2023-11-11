@@ -241,77 +241,38 @@ db.collection.aggregate([
 ##### 9. Afficher l'évolution de la concentration de `NO2` dans la commune de `Clermont-Ferrand` à travers le temps.
 Résulats : 
 ```javascript
-{
-    "_id" : {
-        "date" : "2023-10-17T00:00:00Z"
-    },
-    "moyenne_NO2" : 50.732014285714286
-}
-{
-    "_id" : {
-        "date" : "2023-10-18T00:00:00Z"
-    },
-    "moyenne_NO2" : 26.73774285714286
-}
-{
-    "_id" : {
-        "date" : "2023-10-19T00:00:00Z"
-    },
-    "moyenne_NO2" : 39.2756
-}
-{
-    "_id" : {
-        "date" : "2023-10-20T00:00:00Z"
-    },
-    "moyenne_NO2" : 30.77321904761905
-}
-{
-    "_id" : {
-        "date" : "2023-10-21T00:00:00Z"
-    },
-    "moyenne_NO2" : 5.952457142857143
-}
-{
-    "_id" : {
-        "date" : "2023-10-22T00:00:00Z"
-    },
-    "moyenne_NO2" : 35.02343333333334
-}
-{
-    "_id" : {
-        "date" : "2023-10-23T00:00:00Z"
-    },
-    "moyenne_NO2" : 37.163247619047624
-}
-{
-    "_id" : {
-        "date" : "2023-10-24T00:00:00Z"
-    },
-    "moyenne_NO2" : 39.599004761904766
-}
-{
-    "_id" : {
-        "date" : "2023-10-25T00:00:00Z"
-    },
-    "moyenne_NO2" : 33.593490476190475
-}
+{ date: '2023-10-17T00:00:00Z', concentrationNO2: 86.3478 },
+  { date: '2023-10-18T00:00:00Z', concentrationNO2: 44.4089 },
+  { date: '2023-10-19T00:00:00Z', concentrationNO2: 56.8136 },
+  { date: '2023-10-20T00:00:00Z', concentrationNO2: 48.7794 },
+  { date: '2023-10-21T00:00:00Z', concentrationNO2: 10.6188 },
+  { date: '2023-10-22T00:00:00Z', concentrationNO2: 55.7 },
+  { date: '2023-10-23T00:00:00Z', concentrationNO2: 48.505 },
+  { date: '2023-10-24T00:00:00Z', concentrationNO2: 51.4811 },
+  { date: '2023-10-25T00:00:00Z', concentrationNO2: 49.5019 }
+
 ```
-
+COde : 
 ```javascript
-db.collection.aggregate([
 
+db.collection.aggregate([
+  {
+    $match: {
+      "properties.lib_zone": "Clermont-Ferrand"
+    }
+  },
   {
     $group: {
-      _id: { date: "$properties.date_ech" },
-      moyenne_NO2: { $avg: "$properties.conc_no2" }
+      _id: "$properties.date_ech",
+      moyenneNO2: { $avg: "$properties.conc_no2" }
     }
   },
   {
     $sort: {
-      "_id.date": 1
-    }
-  }
-])
+      _id: 1
+    }
+  }
+]);
 ```
 ##### 10. Quelle est la commune qui a l'indice de concentration d'ozone le plus faible sur la période observée ?
 
