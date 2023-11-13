@@ -9,9 +9,9 @@ SELECT COUNT(*) FROM project WHERE label = 'Dématérialisation' ;
 ```
 
 ##### 2. Quel est le type d'exutoire pour les déchets de `Peinture à l'eau` ?
-Le type d'exutoire est `'conseil'`
+Le type d'exutoire est 'Poubelle noire'
 ```sql
-SELECT type FROM project WHERE nom_dechet = 'Peinture à l eau';
+SELECT type FROM project WHERE type = 'Exutoire' and nom_dechet = 'Peinture à l eau';
 
 ```
 
@@ -31,7 +31,7 @@ SELECT nom_dechet FROM project WHERE famille_dechet = 'Verre';
 ##### 5. Quelle est la description de l'exutoire `6` ?
 La description est` "Ce déchet peut être composté. Il deviendra alors une ressource !!"`
 ``` sql 
-SELECT description FROM project WHERE id_exutoire = 6;
+SELECT description FROM project WHERE id_exutoire = 6 limit 1;
 ```
 
 ##### 6. Combien de type de déchets sont concernés par les exutoires de type `Conseil` ?
@@ -41,11 +41,10 @@ SELECT COUNT(DISTINCT famille_dechet) FROM project WHERE type = 'conseil';
 
 ```
 ##### 7. Quel est le type d'exutoire qui contient le plus de déchets différents ?
-
+Dechetterie, 22 familles de déchets différents 
 ```sql    
-SELECT type, COUNT(DISTINCT nom_dechet) AS nb_dechets
+SELECT COUNT(DISTINCT nom_dechet) AS nb_dechets
 FROM project
-GROUP BY type
 ORDER BY nb_dechets DESC
 LIMIT 1;
 ```
